@@ -36,9 +36,7 @@ public struct UIKitIntrospectionViewController<TargetViewControllerType: UIViewC
         viewController.accessibilityLabel = "IntrospectionUIViewController<\(TargetViewControllerType.self)>"
         viewController.view.accessibilityLabel = "IntrospectionUIView<\(TargetViewControllerType.self)>"
         
-        if let targetView = self.selector(viewController) {
-            self.customize(targetView)
-        }
+        viewController.modalPresentationStyle = .fullScreen
         
         return viewController
     }
